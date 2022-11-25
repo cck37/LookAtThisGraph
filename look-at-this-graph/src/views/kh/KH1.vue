@@ -6,6 +6,29 @@
 <script setup>
 import { onMounted } from "vue";
 import { json } from "d3-fetch";
+
+const mapEnemiesByLocation = (enemies) => {
+  return enemies.reduce((location, enemy) => {
+    enemy.locations.forEach((loc) => {
+      if (
+        location.hasOwnProperty(loc) &&
+        location[loc].hasOwnProperty(enemy.name)
+      ) {
+        location[loc][enemy.name] += 1;
+      } else if (location.hasOwnProperty(loc)) {
+        location[loc][enemy.name] = 1;
+      } else {
+        location[loc] = { [enemy.name]: 1 };
+      }
+    });
+    return location;
+  }, {});
+};
+
+const mapComponentsByEnemy = (components) => {
+  return;
+};
+
 onMounted(() => {
   json("../../../data/kh/darkness.json").then((data) => console.log(data));
 });

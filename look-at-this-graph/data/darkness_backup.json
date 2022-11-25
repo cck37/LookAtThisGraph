@@ -641,529 +641,291 @@
     "components": [
         {
             "name": "Lucid Shard",
-            "enemies": [
-                {
-                    "name": "Shadow",
-                    "drop_rate": "6%",
-                    "drop_rate_min": 0.06,
-                    "drop_rate_max": 0.06
-                },
-                {
-                    "name": "Gigas Shadow",
-                    "drop_rate": "10-100%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 1.0
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Lucid Gem",
-            "enemies": [
-                {
-                    "name": "Wight Knight",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "Gargoyle",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Lucid Crystal",
-            "enemies": [
-                {
-                    "name": "Darkball",
-                    "drop_rate": "1%",
-                    "drop_rate_min": 0.01,
-                    "drop_rate_max": 0.01
-                }
-            ]
+            "enemies": {
+                "name": "Darkball",
+                "drop_rate": "1%",
+                "drop_rate_min": 0.01,
+                "drop_rate_max": 0.01
+            }
         },
         {
             "name": "Spirit Shard",
-            "enemies": [
-                {
-                    "name": "Soldier",
-                    "drop_rate": "6%",
-                    "drop_rate_min": 0.06,
-                    "drop_rate_max": 0.06
-                },
-                {
-                    "name": "Large Body",
-                    "drop_rate": "12%",
-                    "drop_rate_min": 0.12,
-                    "drop_rate_max": 0.12
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Spirit Gem",
-            "enemies": [
-                {
-                    "name": "Air Soldier",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Fury Stone",
-            "enemies": [
-                {
-                    "name": "Gigas Shadow",
-                    "drop_rate": "10-100%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Gigas Shadow",
+                "drop_rate": "10-100%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Power Shard",
-            "enemies": [
-                {
-                    "name": "Powerwild",
-                    "drop_rate": "8%",
-                    "drop_rate_min": 0.08,
-                    "drop_rate_max": 0.08
-                },
-                {
-                    "name": "Bouncywild",
-                    "drop_rate": "12%",
-                    "drop_rate_min": 0.12,
-                    "drop_rate_max": 0.12
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Power Gem",
-            "enemies": [
-                {
-                    "name": "Pirate",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "Air Pirate",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "Battleship",
-                    "drop_rate": "8%",
-                    "drop_rate_min": 0.08,
-                    "drop_rate_max": 0.08
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Power Crystal",
-            "enemies": [
-                {
-                    "name": "Wyvern",
-                    "drop_rate": "2%",
-                    "drop_rate_min": 0.02,
-                    "drop_rate_max": 0.02
-                }
-            ]
+            "enemies": {
+                "name": "Wyvern",
+                "drop_rate": "2%",
+                "drop_rate_min": 0.02,
+                "drop_rate_max": 0.02
+            }
         },
         {
             "name": "Power Stone",
-            "enemies": [
-                {
-                    "name": "Sniperwild",
-                    "drop_rate": "35-100%",
-                    "drop_rate_min": 0.35,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Sniperwild",
+                "drop_rate": "35-100%",
+                "drop_rate_min": 0.35,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Energy Stone",
-            "enemies": [
-                {
-                    "name": "Stealth Soldier",
-                    "drop_rate": "35%",
-                    "drop_rate_min": 0.35,
-                    "drop_rate_max": 0.35
-                }
-            ]
+            "enemies": {
+                "name": "Stealth Soldier",
+                "drop_rate": "35%",
+                "drop_rate_min": 0.35,
+                "drop_rate_max": 0.35
+            }
         },
         {
             "name": "Blaze Shard",
-            "enemies": [
-                {
-                    "name": "Red Nocturne",
-                    "drop_rate": "6%",
-                    "drop_rate_min": 0.06,
-                    "drop_rate_max": 0.06
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Blaze Gem",
-            "enemies": [
-                {
-                    "name": "Bandit",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "Fat Bandit",
-                    "drop_rate": "8%",
-                    "drop_rate_min": 0.08,
-                    "drop_rate_max": 0.08
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Blazing Stone",
-            "enemies": [
-                {
-                    "name": "Chimera",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Chimera",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Frost Shard",
-            "enemies": [
-                {
-                    "name": "Blue Rhapsody",
-                    "drop_rate": "12%",
-                    "drop_rate_min": 0.12,
-                    "drop_rate_max": 0.12
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Frost Gem",
-            "enemies": [
-                {
-                    "name": "Sea Neon",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "Sheltering Zone",
-                    "drop_rate": "8%",
-                    "drop_rate_min": 0.08,
-                    "drop_rate_max": 0.08
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Frost Stone",
-            "enemies": [
-                {
-                    "name": "Grand Ghost",
-                    "drop_rate": "35-100%",
-                    "drop_rate_min": 0.35,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Grand Ghost",
+                "drop_rate": "35-100%",
+                "drop_rate_min": 0.35,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Thunder Shard",
-            "enemies": [
-                {
-                    "name": "Yellow Opera",
-                    "drop_rate": "8%",
-                    "drop_rate_min": 0.08,
-                    "drop_rate_max": 0.08
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Thunder Gem",
-            "enemies": [
-                {
-                    "name": "Screwdiver",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "Aquatank",
-                    "drop_rate": "8%",
-                    "drop_rate_min": 0.08,
-                    "drop_rate_max": 0.08
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Lightning Stone",
-            "enemies": [
-                {
-                    "name": "Black Ballade",
-                    "drop_rate": "10-100%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Black Ballade",
+                "drop_rate": "10-100%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Shiny Crystal",
-            "enemies": [
-                {
-                    "name": "Wizard",
-                    "drop_rate": "2%",
-                    "drop_rate_min": 0.02,
-                    "drop_rate_max": 0.02
-                }
-            ]
+            "enemies": {
+                "name": "Wizard",
+                "drop_rate": "2%",
+                "drop_rate_min": 0.02,
+                "drop_rate_max": 0.02
+            }
         },
         {
             "name": "Dazzling Stone",
-            "enemies": [
-                {
-                    "name": "Jet Balloon",
-                    "drop_rate": "20-100%",
-                    "drop_rate_min": 0.2,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Jet Balloon",
+                "drop_rate": "20-100%",
+                "drop_rate_min": 0.2,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Bright Shard",
-            "enemies": [
-                {
-                    "name": "Green Requiem",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Bright Gem",
-            "enemies": [
-                {
-                    "name": "Search Ghost",
-                    "drop_rate": "4%",
-                    "drop_rate_min": 0.04,
-                    "drop_rate_max": 0.04
-                },
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.1
-                }
-            ]
+            "enemies": {
+                "name": "White Mushroom",
+                "drop_rate": "10%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.1
+            }
         },
         {
             "name": "Bright Crystal",
-            "enemies": [
-                {
-                    "name": "Defender",
-                    "drop_rate": "2%",
-                    "drop_rate_min": 0.02,
-                    "drop_rate_max": 0.02
-                }
-            ]
+            "enemies": {
+                "name": "Defender",
+                "drop_rate": "2%",
+                "drop_rate_min": 0.02,
+                "drop_rate_max": 0.02
+            }
         },
         {
             "name": "Mystery Goo",
-            "enemies": [
-                {
-                    "name": "White Mushroom",
-                    "drop_rate": "10-20%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.2
-                },
-                {
-                    "name": "Rare Truffle",
-                    "drop_rate": "20-100%",
-                    "drop_rate_min": 0.2,
-                    "drop_rate_max": 1.0
-                },
-                {
-                    "name": "Black Fungus",
-                    "drop_rate": "100%",
-                    "drop_rate_min": 1.0,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Black Fungus",
+                "drop_rate": "100%",
+                "drop_rate_min": 1.0,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Gale",
-            "enemies": [
-                {
-                    "name": "Invisible",
-                    "drop_rate": "6%",
-                    "drop_rate_min": 0.06,
-                    "drop_rate_max": 0.06
-                },
-                {
-                    "name": "Angel Star",
-                    "drop_rate": "6%",
-                    "drop_rate_min": 0.06,
-                    "drop_rate_max": 0.06
-                }
-            ]
+            "enemies": {
+                "name": "Angel Star",
+                "drop_rate": "6%",
+                "drop_rate_min": 0.06,
+                "drop_rate_max": 0.06
+            }
         },
         {
             "name": "Serenity Power",
-            "enemies": [
-                {
-                    "name": "Pink Agaricus",
-                    "drop_rate": "10-100%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 1.0
-                }
-            ]
+            "enemies": {
+                "name": "Pink Agaricus",
+                "drop_rate": "10-100%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 1.0
+            }
         },
         {
             "name": "Stormy Stone",
-            "enemies": [
-                {
-                    "name": "Neoshadow",
-                    "drop_rate": "35%",
-                    "drop_rate_min": 0.35,
-                    "drop_rate_max": 0.35
-                }
-            ]
+            "enemies": {
+                "name": "Neoshadow",
+                "drop_rate": "35%",
+                "drop_rate_min": 0.35,
+                "drop_rate_max": 0.35
+            }
         },
         {
             "name": "Mythril Shard",
-            "enemies": [
-                {
-                    "name": "Pot Spider",
-                    "drop_rate": "1%",
-                    "drop_rate_min": 0.01,
-                    "drop_rate_max": 0.01
-                },
-                {
-                    "name": "Barrel Spider",
-                    "drop_rate": "1%",
-                    "drop_rate_min": 0.01,
-                    "drop_rate_max": 0.01
-                },
-                {
-                    "name": "Arch Behemoth",
-                    "drop_rate": "20%",
-                    "drop_rate_min": 0.2,
-                    "drop_rate_max": 0.2
-                },
-                {
-                    "name": "Bambi",
-                    "drop_rate": "40 / 60%",
-                    "drop_rate_min": 0.4,
-                    "drop_rate_max": 0.4
-                }
-            ]
+            "enemies": {
+                "name": "Bambi",
+                "drop_rate": "40 / 60%",
+                "drop_rate_min": 0.4,
+                "drop_rate_max": 0.6
+            }
         },
         {
             "name": "Mythril",
-            "enemies": [
-                {
-                    "name": "Bambi",
-                    "drop_rate": "30%",
-                    "drop_rate_min": 0.3,
-                    "drop_rate_max": 0.3
-                }
-            ]
+            "enemies": {
+                "name": "Bambi",
+                "drop_rate": "30%",
+                "drop_rate_min": 0.3,
+                "drop_rate_max": 0.3
+            }
         },
         {
             "name": "Mythril Stone",
-            "enemies": [
-                {
-                    "name": "Pot Scorpion",
-                    "drop_rate": "10-35%",
-                    "drop_rate_min": 0.1,
-                    "drop_rate_max": 0.35
-                }
-            ]
+            "enemies": {
+                "name": "Pot Scorpion",
+                "drop_rate": "10-35%",
+                "drop_rate_min": 0.1,
+                "drop_rate_max": 0.35
+            }
         }
     ],
     "enemies": [

@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 import json
+import re
 
 def get_recipes(page):
     # Locators
@@ -51,38 +52,44 @@ def get_components(page):
             if len(key_raw) > 0:
                 key = key_raw[0]
 
-                enemies_raw = rows.nth(j).locator("td").nth(2).all_inner_texts()
-                enemies_dict = dict()
+                enemies_raw = rows.nth(j).locator("td").nth(2).text_content()
+                enemies_list = list()
 
                 if len(enemies_raw) > 0:
-                    for enemies in enemies_raw:
-                        for enemy in enemies.split(","):
-                            t_str = enemy.replace(u"\xa0", " ")
-                            t_list = t_str.split("(")
-                            if len(t_list) > 1:
-                                enemies_dict["name"] = t_list[0].strip("(").strip(")").strip()
-                                enemies_dict["drop_rate"] = t_list[1].strip("(").strip(")").strip()
+                    for enemy in enemies_raw.split(","):                        
+                        enemies_dict = dict()
 
-                                drop_rates = enemies_dict["drop_rate"].strip("%").split("-")
-                                
-                                if drop_rates[0].isnumeric():
-                                    drop_rate_min = int(drop_rates[0])/100
-                                else: # Fuck you Bambi
-                                    drop_rates = enemies_dict["drop_rate"].strip("%").split("/")
-                                    drop_rate_min = int(drop_rates[0])/100
-
-                                if len(drop_rates) > 1:
-                                    drop_rate_max = int(drop_rates[1])/100
-                                else:
-                                    drop_rate_max = drop_rate_min
+                        enemy = enemy.replace(u"\xa0", " ").strip()
+                        name_re = r"^.+\("
+                        lable_rate = r"\(\d+(-|\s+/\s+)?\d*%\)"
+                        
+                        if re.search(name_re, enemy) and re.search(lable_rate, enemy):
                             
-                                enemies_dict["drop_rate_min"] = drop_rate_min
-                                enemies_dict["drop_rate_max"] = drop_rate_max
-                
-                if enemies_dict: 
+                            enemies_dict["name"] = re.search(name_re, enemy).group().strip("(").strip()
+                            enemies_dict["drop_rate"] = re.search(lable_rate, enemy).group().strip("(").strip(")").strip()
+
+                            drop_rates = enemies_dict["drop_rate"].strip("%").split("-")
+                            
+                            if drop_rates[0].isnumeric():
+                                drop_rate_min = int(drop_rates[0])/100
+                            else: # Fuck you Bambi
+                                drop_rates = enemies_dict["drop_rate"].split("/")
+                                drop_rate_min = int(drop_rates[0])/100
+
+                            if len(drop_rates) > 1 and drop_rates[1].isnumeric():
+                                drop_rate_max = int(drop_rates[1])/100
+                            else:
+                                drop_rate_max = drop_rate_min
+                        
+                            enemies_dict["drop_rate_min"] = drop_rate_min
+                            enemies_dict["drop_rate_max"] = drop_rate_max
+
+                            enemies_list.append(enemies_dict)
+
+                if len(enemies_list) > 0: 
                     inner_dict = dict()
                     inner_dict["name"] = key
-                    inner_dict["enemies"] = enemies_dict
+                    inner_dict["enemies"] = enemies_list
                     components_list.append(inner_dict)
 
     return components_list
@@ -117,6 +124,8 @@ def get_darkness(p):
     browser = p.webkit.launch(headless=False)
     
     context = browser.new_context()
+    # Start tracing before creating / navigating a page.
+    context.tracing.start(screenshots=True, snapshots=True, sources=True)
 
     recipes_page = browser.new_page()
     recipes_page.goto("https://www.khguides.com/kh/inventory/synthesis/")
