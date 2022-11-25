@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "d3": "^7.6.1",
     "roboto-fontface": "*",
     "vue": "^3.2.38",
     "vue-router": "4",
@@ -15,6 +16,7 @@
     "webfontloader": "^1.0.0"
   },
   "devDependencies": {
+    "@types/d3": "^7.4.0",
     "@vitejs/plugin-vue": "^3.0.3",
     "vite": "^3.1.8",
     "vite-plugin-vuetify": "^1.0.0-alpha.12"

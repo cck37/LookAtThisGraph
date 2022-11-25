@@ -1,12 +1,5 @@
 <template>
-  <v-navigation-drawer
-    model-value
-    class="pt-4"
-    color="grey-lighten-3"
-    rail
-    expand-on-hover
-    permanent
-  >
+  <v-navigation-drawer model-value class="pt-4" rail expand-on-hover permanent>
     <v-btn
       v-for="(route, idx) in normalizedRoutes"
       :key="idx"
