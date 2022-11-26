@@ -26,7 +26,17 @@ const mapEnemiesByLocation = (enemies) => {
 };
 
 const mapComponentsByEnemy = (components) => {
-  return;
+  return components.reduce((enemy, component) => {
+    component.enemies.forEach((en) => {
+      if(enemy.hasOwnProperty(en.name)){
+        enemy[en.name]["components"].push({...en, "name": component.name})
+      }
+      else {
+        enemy[en.name] = { "name": en.name, "components": [{...en, "name": component.name}]}
+      }
+    });
+    return enemy;
+  }, {});
 };
 
 onMounted(() => {
