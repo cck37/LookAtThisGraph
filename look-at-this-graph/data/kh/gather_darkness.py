@@ -73,10 +73,10 @@ def get_components(page):
                             if drop_rates[0].isnumeric():
                                 drop_rate_min = int(drop_rates[0])/100
                             else: # Fuck you Bambi
-                                drop_rates = enemies_dict["drop_rate"].split("/")
+                                drop_rates = enemies_dict["drop_rate"].strip("%").split("/")
                                 drop_rate_min = int(drop_rates[0])/100
 
-                            if len(drop_rates) > 1 and drop_rates[1].isnumeric():
+                            if len(drop_rates) > 1 and drop_rates[1].strip().isnumeric():
                                 drop_rate_max = int(drop_rates[1])/100
                             else:
                                 drop_rate_max = drop_rate_min

@@ -1139,7 +1139,7 @@
                     "name": "Bambi",
                     "drop_rate": "40 / 60%",
                     "drop_rate_min": 0.4,
-                    "drop_rate_max": 0.4
+                    "drop_rate_max": 0.6
                 }
             ]
         },

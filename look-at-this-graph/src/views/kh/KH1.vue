@@ -1,45 +1,29 @@
 <template>
   <v-card class="pa-6 rounded-sm mx-12 my-12">Kingdom Hearts 1</v-card>
-  <v-card class="pa-6 rounded-sm mx-12 my-12">Chart Go Here</v-card>
+  <v-card class="pa-6 rounded-sm mx-12 my-12">
+    <KHCirclePacking v-if="khData" :khData="khData" />
+  </v-card>
 </template>
 
-<script setup>
-import { onMounted } from "vue";
+<script async setup>
 import { json } from "d3-fetch";
+import { ref, onServerPrefetch, onMounted } from "vue";
+import KHCirclePacking from "../../components/charts/KHCirclePacking.vue";
 
-const mapEnemiesByLocation = (enemies) => {
-  return enemies.reduce((location, enemy) => {
-    enemy.locations.forEach((loc) => {
-      if (
-        location.hasOwnProperty(loc) &&
-        location[loc].hasOwnProperty(enemy.name)
-      ) {
-        location[loc][enemy.name] += 1;
-      } else if (location.hasOwnProperty(loc)) {
-        location[loc][enemy.name] = 1;
-      } else {
-        location[loc] = { [enemy.name]: 1 };
-      }
-    });
-    return location;
-  }, {});
-};
+const khData = ref(null);
 
-const mapComponentsByEnemy = (components) => {
-  return components.reduce((enemy, component) => {
-    component.enemies.forEach((en) => {
-      if(enemy.hasOwnProperty(en.name)){
-        enemy[en.name]["components"].push({...en, "name": component.name})
-      }
-      else {
-        enemy[en.name] = { "name": en.name, "components": [{...en, "name": component.name}]}
-      }
-    });
-    return enemy;
-  }, {});
-};
+onServerPrefetch(async () => {
+  // component is rendered as part of the initial request
+  // pre-fetch data on server as it is faster than on the client
+  khData.value = await fetchOnServer(json("../../../data/kh/darkness.json"));
+});
 
-onMounted(() => {
-  json("../../../data/kh/darkness.json").then((data) => console.log(data));
+onMounted(async () => {
+  if (!khData.value) {
+    // if data is null on mount, it means the component
+    // is dynamically rendered on the client. Perform a
+    // client-side fetch instead.
+    khData.value = await json("../../../data/kh/darkness.json");
+  }
 });
 </script>
