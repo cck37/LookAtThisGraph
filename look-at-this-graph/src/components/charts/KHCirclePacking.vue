@@ -1,24 +1,12 @@
 <template>
   <div>
     <h1>Circle Pack in D3</h1>
-    <svg :height="height" :width="width">
-      <g transform="translate(50,50)">
-        <circle
-          v-for="c in output"
-          :key="c.id"
-          :r="c.r"
-          :cx="c.x"
-          :cy="c.y"
-          :fill="c.fill"
-          :stroke="c.stroke"
-        ></circle>
-      </g>
-    </svg>
+    <div class="chart"></div>
   </div>
 </template>
 
 <script setup>
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
 import * as d3 from "d3";
 
 const props = defineProps(["khData"]);
@@ -77,14 +65,31 @@ const mapToHierarchy = (data) => {
   return welcomeToHell(aggregatedDict);
 };
 
-const packData = (data) => {
-  return d3
-    .nest()
-    .key((d) => d.name)
-    .entries(data);
-};
-
-console.log(mapToHierarchy(props.khData));
-
-const output = computed(() => packData(mapToHierarchy(props.khData)));
+onMounted(() => {
+  let data = mapToHierarchy(props.khData);
+  console.log(data);
+  d3.select(".chart")
+    .selectAll("div")
+    .data(data)
+    .enter()
+    .append("div")
+    .style("width", function (d) {
+      return d.enemies.length * 10 + "px";
+    })
+    .text(function (d) {
+      return `${d.name} ${d.enemies.length}`;
+    });
+});
 </script>
+
+<style>
+.chart > div {
+  white-space: nowrap;
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+</style>
