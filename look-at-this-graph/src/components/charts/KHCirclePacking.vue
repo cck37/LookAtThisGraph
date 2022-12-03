@@ -53,7 +53,15 @@ onMounted(() => {
 
   packLayout(root);
 
-  var tooltip = d3.select(".tooltip-area").style("opacity", 0);
+  var tooltip = d3
+    .select(".tooltip-area")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px");
 
   const mouseover = (_event, _d) => {
     tooltip.style("opacity", 1);
@@ -67,7 +75,7 @@ onMounted(() => {
     const text = d3.select(".tooltip-area__text");
     text.text(
       d.children === undefined
-        ? `${d.data[0] ?? ""}: ${parseFloat(d.value).toFixed(2)}`
+        ? `${d.data[0] ?? ""}: ${parseFloat(d.value).toFixed(3) * 100}%`
         : ""
     );
 
@@ -85,9 +93,12 @@ onMounted(() => {
       return "translate(" + [d.x, d.y] + ")";
     });
 
-  nodes.append("circle").attr("r", function (d) {
-    return d.r;
-  });
+  nodes
+    .append("circle")
+    .attr("r", function (d) {
+      return d.r;
+    })
+    .attr("class", "node");
 
   nodes
     .append("text")
