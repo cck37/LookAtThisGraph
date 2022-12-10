@@ -23,22 +23,26 @@ const props = defineProps(["khData"]);
 
 onMounted(() => {
   var packLayout = d3.pack().size([900, 900]);
-  let data = mapToHierarchy(props.khData);
-  let rootData = d3.hierarchy(data);
-  rootData.sum(function (d) {
-    return d[1];
-  });
-  //console.log(props.khData, rootData);
-  console.table(mapToFlat(props.khData));
+  // let data = mapToHierarchy(props.khData);
+  // let rootData = d3.hierarchy(data);
+  // rootData.sum(function (d) {
+  //   return d[1];
+  // });
+  // //console.log(props.khData, rootData);
+  // console.table(mapToFlat(props.khData));
+  function round(value, decimals) {
+    return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
+  }
+
   const sumMaxDropRate = (group) => {
-    return d3.sum(group, function (d) {
-      return d.drop_rate_max;
-    });
+    return group.reduce((x, y) => round(x * y.drop_rate_max, 2), 1);
   };
 
-  let data2 = mapToFlat(props.khData);
+  let data = mapToFlat(props.khData).filter(
+    (d) => d.drop_rate_max !== undefined
+  );
   let groups = d3.rollup(
-    data2,
+    data,
     sumMaxDropRate,
     function (d) {
       return d.locationName;
@@ -51,6 +55,8 @@ onMounted(() => {
   let root = d3.hierarchy(groups);
   root.sum((d) => d[1]);
 
+  console.log(root);
+  console.log(data);
   packLayout(root);
 
   var tooltip = d3
@@ -132,20 +138,19 @@ onMounted(() => {
 .chart > div {
   white-space: nowrap;
   font: 10px sans-serif;
-  background-color: steelblue;
   text-align: right;
   padding: 3px;
   margin: 1px;
   color: white;
 }
 circle {
-  fill: indianred;
+  fill: gray;
   opacity: 0.3;
-  stroke: white;
+  stroke: lightskyblue;
 }
 
 text {
-  fill: white;
+  fill: gold;
   text-anchor: middle;
 }
 .tooltip-area__text {
