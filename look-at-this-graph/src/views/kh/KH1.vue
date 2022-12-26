@@ -1,8 +1,5 @@
 <template>
-  <v-card class="pa-6 rounded-sm mx-12 my-12">Kingdom Hearts 1</v-card>
-  <v-card class="pa-6 rounded-sm mx-12 my-12">
-    <KHCirclePacking v-if="khData" :khData="khData" />
-  </v-card>
+  <KHCirclePacking v-if="khData" :khData="khData" />
 </template>
 
 <script async setup>
