@@ -1,8 +1,7 @@
 <template>
   <div>
-    <v-select
+    <v-autocomplete
       clearable
-      chips
       hint="What recipes do you still need to finish"
       :items="recipes"
       label="Recipes"
@@ -10,8 +9,20 @@
       :menu-props="{ maxHeight: '400' }"
       variant="underlined"
       v-model="selectedRecipes"
-    ></v-select>
-    <svg width="960" height="960"></svg>
+    >
+      <template v-slot:selection="{ item, index }">
+        <v-chip v-if="index <= 5">
+          <span>{{ item.title }}</span>
+        </v-chip>
+        <span v-if="index === 5" class="grey--text text-caption">
+          (+{{ selectedRecipes.length - index }} other{{
+            selectedRecipes.length - index > 1 ? "s" : ""
+          }})
+        </span>
+      </template>
+    </v-autocomplete>
+
+    <div id="circleChart"></div>
   </div>
 </template>
 
@@ -22,6 +33,7 @@ import * as d3 from "d3";
 
 const props = defineProps(["khData"]);
 let data = mapToFlat(props.khData);
+
 const recipes = [
   ...new Set(
     data
@@ -30,7 +42,9 @@ const recipes = [
       .map((r) => r.recipeName)
   ),
 ]; // arr->set->arr to remove dupes
+
 const selectedRecipes = ref([]);
+
 watchEffect(() => {
   chart(
     data.filter((comp) =>
@@ -58,7 +72,8 @@ function update(root) {
   let view;
 
   const svg = d3
-    .select("svg")
+    .select("#circleChart")
+    .append("svg")
     .attr("viewBox", [-(width / 2), -(height / 2), width, height])
     .style("display", "block")
     .style("margin", "0 -14px")
@@ -67,6 +82,7 @@ function update(root) {
     .on("click", (event) => zoom(event, root));
 
   const node = d3
+    .select("#circleChart")
     .select("svg")
     .selectAll("circle")
     .data(root.descendants().slice(1))
@@ -79,6 +95,7 @@ function update(root) {
     );
 
   const label = d3
+    .select("#circleChart")
     .select("svg")
     .attr("pointer-events", "none")
     .attr("text-anchor", "middle")
@@ -116,6 +133,7 @@ function update(root) {
     focus = d;
 
     const transition = d3
+      .select("#circleChart")
       .select("svg")
       .transition()
       .duration(event.altKey ? 7500 : 750)
