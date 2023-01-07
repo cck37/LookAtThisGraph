@@ -14,7 +14,6 @@ import { ref, onServerPrefetch, onMounted } from "vue";
 import KHCirclePacking from "../../components/charts/KHCirclePacking.vue";
 
 const khData = ref(null);
-const whatever = [];
 
 onServerPrefetch(async () => {
   // component is rendered as part of the initial request

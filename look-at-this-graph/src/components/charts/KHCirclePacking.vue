@@ -7,6 +7,7 @@
       :items="recipes"
       label="Recipes"
       multiple
+      :menu-props="{ maxHeight: '400' }"
       variant="underlined"
       v-model="selectedRecipes"
     ></v-select>
@@ -21,12 +22,24 @@ import * as d3 from "d3";
 
 const props = defineProps(["khData"]);
 let data = mapToFlat(props.khData);
-const recipes = [...new Set(data.map((comp) => comp.recipeName))]; // arr->set->arr to remove dupes
+const recipes = [
+  ...new Set(
+    data
+      .map((comp) => comp.recipes)
+      .flat()
+      .map((r) => r.recipeName)
+  ),
+]; // arr->set->arr to remove dupes
 const selectedRecipes = ref([]);
 watchEffect(() => {
   chart(
     data.filter((comp) =>
-      selectedRecipes.value.some((r) => r === comp.recipeName)
+      selectedRecipes.value.some((r) =>
+        comp.recipes
+          .flat()
+          .map((r) => r.recipeName)
+          .some((c) => c === r)
+      )
     )
   );
 });
@@ -141,8 +154,6 @@ function chart(data) {
   const sumMaxDropRate = (group) => {
     return group.reduce((x, y) => round(x * (1 - y.drop_rate_max), 2), 1);
   };
-
-  console.log(data);
 
   const groups = d3.rollup(
     data,
