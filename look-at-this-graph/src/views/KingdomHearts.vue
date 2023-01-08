@@ -1,5 +1,5 @@
 <template>
-  <v-layout style="height: 100vh">
+  <v-layout>
     <nav-bar :routes="routes" base="/kh" />
     <v-app-bar>
       <v-img
@@ -23,9 +23,15 @@ import routes from "../plugins/kh-routes";
 
 <style scoped>
 .kh-bg {
-  background-image: url("/assets/kh_header.jpg");
+  background-color: black;
+  background-image: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 0.7) 0%,
+      rgba(9, 9, 121, 0.7) 0%,
+      rgba(67, 187, 212, 0.7) 100%
+    ),
+    url("/assets/background_default.png");
   background-position: center;
   background-repeat: repeat;
-  height: 100vh;
 }
 </style>
