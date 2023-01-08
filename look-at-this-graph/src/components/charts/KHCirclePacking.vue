@@ -22,7 +22,7 @@
       </template>
     </v-autocomplete>
 
-    <div id="circleChart"></div>
+    <div id="circleChart"><svg></svg></div>
   </div>
 </template>
 
@@ -66,6 +66,7 @@ function color() {
 }
 
 function update(root) {
+  console.log(root);
   const height = 932;
   const width = 932;
   let focus = root;
@@ -73,7 +74,7 @@ function update(root) {
 
   const svg = d3
     .select("#circleChart")
-    .append("svg")
+    .select("svg")
     .attr("viewBox", [-(width / 2), -(height / 2), width, height])
     .style("display", "block")
     .style("margin", "0 -14px")
@@ -89,6 +90,7 @@ function update(root) {
     .join("circle")
     .attr("fill", (d) => (d.children ? color(d.depth) : "white"))
     .attr("pointer-events", (d) => (!d.children ? "none" : "auto"))
+    .attr("class", "node")
     .on(
       "click",
       (event, d) => focus !== d && (zoom(event, d), event.stopPropagation())
@@ -219,7 +221,7 @@ text {
 }
 
 .node:hover {
-  stroke-width: 7px !important;
-  opacity: 1 !important;
+  stroke-width: 3px;
+  opacity: 1;
 }
 </style>

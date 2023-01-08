@@ -1,4 +1,4 @@
-# default
+# A playground for testing data viz
 
 ## Project setup
 
